@@ -1,0 +1,18 @@
+{% extends 'home/restricted.html' %}
+{% block logged_in %}
+{% load staticfiles%}
+<div class="row welcome text-center">
+    <div class="col-12">
+        <h1 class="display-6">
+            GISPower Forum
+        </h1>
+    </div>
+    <div class="col-12">
+        <h3 class="bg-light">
+            Latest Posts
+        </h3>
+        {% block post_content %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

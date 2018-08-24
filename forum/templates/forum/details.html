@@ -1,0 +1,12 @@
+{% extends 'forum/layout.html' %}
+
+{% block post_content %}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{post.title}}</h4>
+            <p class="card-text">{{post.body}}</p>
+            <p class="card-link">{{post.created_at}}</p>
+            <a href="/forum" class="card-link">Go Back</a>
+        </div>
+    </div>
+{% endblock %}

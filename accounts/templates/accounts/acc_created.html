@@ -1,0 +1,19 @@
+{% extends 'home/base.html' %} {% block page_title %} {{pg_title}} {% endblock %} {% block content %}
+
+<div class="container padding">
+    <div class="welcome text-center">
+        <div class="jumbotron">
+            <h1 class="display-6 text-success">
+                Welcome 
+                {% if user.first_name != '' %}
+                    Hi {{ user.last_name }} 
+                    {{ user.first_name}}! 
+                {% else %}
+                    Hi {{ user.username }}!
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

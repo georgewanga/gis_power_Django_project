@@ -1,0 +1,30 @@
+
+		footer {
+			background-color: #f2f2f2f6;
+			padding: 25px;
+		}
+
+		body {
+			background-color: rgba(250, 250, 250, .5);
+			;
+			padding: 0px;
+		}
+
+		.object_area {
+			background-color: rgba(229, 255, 236, 1);
+			;
+		}
+
+		.carousel-inner img {
+			width: 100%;
+			/* Set width to 100% */
+			min-height: 200px;
+		}
+
+		/* Hide the carousel text when the screen is less than 600 pixels wide */
+
+		@media (max-width: 600px) {
+			.carousel-caption {
+				display: none;
+			}
+		}

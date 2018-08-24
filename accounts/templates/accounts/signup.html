@@ -1,0 +1,34 @@
+{% extends 'home/base.html' %} {% block page_title %} {{pg_title}} {% endblock %} {% block content %}
+
+<div class="col-md-6 offset-md-3">
+    <span class="anchor" id="formRegister"></span>
+    <!-- form card register -->
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+            <h3 class="mb-0">Sign Up</h3>
+        </div>
+        <div class="card-body">
+            <form class="form" role="form" autocomplete="off" method="post">
+                {% csrf_token %} {% for field in form %}
+
+                <div class="form-group">
+                    <label>{{ field.label_tag }}</label>
+                    <span class="form-control"> {{ field }} {% if field.help_text %}
+                        <small style="color: grey">{{ field.help_text }}</small>
+                        {% endif %} </span>
+                    <span> {% for error in field.errors %}
+                        <p style="color: red">{{ error }}</p>
+                        {% endfor %} </span>
+                </div>
+                {% endfor %}
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg float-right">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /form card register -->
+
+</div>
+
+{% endblock %}

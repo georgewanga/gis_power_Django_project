@@ -1,0 +1,43 @@
+{% extends 'home/restricted.html' %}
+{% block logged_in %}
+{% load staticfiles %}
+{% load leaflet_tags %}
+{% leaflet_css %}
+{% leaflet_js %}
+
+<script type="text/javascript"src="{% static 'home/leaflet.ajax.js' %}"></script>
+
+<div class="row welcome"> 
+    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12">
+        <div class="card-header text-center">
+            <h3 class="mb-0">Site Map</h3>
+        </div>
+        <div class="object_area">
+            <script>
+                var map = L.map('map').setView([-1.31,36.83], 4);
+                var secLayer = L.GeoJSON("{% url 'Primary_substations_data' %}").addTo(map);
+            </script>
+            <script>
+                var map = L.map('map').setView([-1.31,36.83], 4);
+                var secLayer = L.GeoJSON("{% url 'Urban_plot_points_data' %}").addTo(map);
+            </script>
+            <script>
+                var map = L.map('map').setView([-1.31,36.83], 4);
+                var secLayer = L.GeoJSON("{% url 'secondary_substations_data' %}").addTo(map);
+            </script>
+        </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
+        <div class="card-header">
+            <h5 class="mb-0 modal-header">Layers</h5>
+        </div>
+        <p>
+            {% for i in "x"|ljust:"10" %}
+            <label>
+                <input type="checkbox" name="CheckboxGroup1" value="checkbox" id="CheckboxGroup1_0"> Map layer {{ forloop.counter }}
+                </label>
+            <br> {% endfor %}
+        </p>
+    </div>
+</div>
+{% endblock %}

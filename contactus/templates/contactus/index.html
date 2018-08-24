@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %} {% block page_title %} {{pg_title}} {% endblock %} {% block content %}
+<div class="container text-justify">
+    <!-- form user info -->
+    <div class="card card-outline-secondary">
+        <div class="card-header">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="card-body">
+            <form class="form" role="form" autocomplete="off">
+                <fieldset>
+                    <label for="name2" class="mb-0">Name</label>
+                    <div class="row mb-1">
+                        <div class="col-lg-12">
+                            <input type="text" name="name2" id="name2" class="form-control" placeholder="Full name" required="">
+                        </div>
+                    </div>
+                    <label for="email2" class="mb-0">Email</label>
+                    <div class="row mb-1">
+                        <div class="col-lg-12">
+                            <input type="email" class="form-control"  name="email2" id="email2" placeholder="Email" required="">
+                        </div>
+                    </div>
+                    <label for="message2" class="mb-0">Message</label>
+                    <div class="row mb-1">
+                        <div class="col-lg-12">
+                            <textarea rows="4" name="message2" id="message2" class="form-control" required=""></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-lg float-right">Send Message</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!-- /form user info -->
+</div>
+{% endblock %}

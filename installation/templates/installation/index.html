@@ -1,0 +1,97 @@
+{% extends 'home/restricted.html' %}
+{% block logged_in %}
+{% load staticfiles%}
+<div class="container">
+    <div class="row">
+        <div class="bg-light col-md-12">
+                <ul class="nav nav-fill">
+                    <a class="nav-item" href="#"><h6>Installation application forms</h6></a>
+                    <a class="nav-item" href="#">Installation Schedule</a>
+                    <a class="nav-item" href="#">Completed installation</a>
+                </ul>
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+<div class="container">
+    <h4>Installation Application Form</h4>
+    <h6>We at<b>GISPower</b> are Happy to serve you.</h6>
+    <p class="lead">This is a form that a technician uses to enter customer details upon completing installation</p>
+</div>
+<div class="container">
+    <form>
+        <span>
+            <b>CUSTOMER</b>
+        </span>
+        <p>Please enter Customer Details below to apply for an installation;</p>
+        <div class="form-group">
+            <label>Full Names
+                <span>*</span>
+            </label>
+            <input class="form-control" type="text" name="First_Name" placeholder="First Name" />
+            <input class="form-control" type="text" name="Last_Name" placeholder="Last Name" />
+        </div>
+        <div class="form-group">
+            <label>Phone Number (254 XXX XXXXXX)
+                <span>*</span>
+            </label>
+            <input type="text" name="Phone_Number" class="field-long form-control" pattern="^\d{3} \d{3} \d{6}$" placeholder="254 XXX XXXXXX"
+            />
+        </div class="form-group">
+        <div class="form-group">
+            <label>Email
+                <span>*</span>
+            </label>
+            <input class="form-control" type="email" name="Email" placeholder="Valid Email" />
+        </div>
+        <div class="form-group">
+            <label>Installation Type</label>
+            <select class="form-control" name="Installation_Type">
+                <option class="form-control" value="type_residential">Residential Installation</option>
+                <option class="form-control" value="Type_Company">Company Installation</option>
+            </select>
+        </div>
+        <div>
+            <hr/>
+        </div>
+        <span>
+            <b>TECHNICIAN</b>
+        </span>
+        <p>Please enter your Details below;</p>
+        <div class="form-group">
+            <label>Technician ID
+                <span>*</span>
+            </label>
+            <input class="form-control" type="text" name="Technician_ID " placeholder="Technician ID " />
+        </div>
+        <div class="form-group">
+            <label>Transformer Number</label>
+            <select class="form-control" name="Transformer_Number">
+                <option value="null">--Select--</option>
+                <option value="Transformer1">Tx001</option>
+                <option value="Transformer1">Tx002</option>
+                <option value="Transformer1">Tx003</option>
+                <option value="Transformer1">Tx004</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Remark
+                <span></span>
+            </label>
+            <textarea class="form-control" rows="5" id="Remark"></textarea>
+        </div>
+        <div>
+            <hr/>
+        </div>
+        <div>
+            <input type="submit" value="Submit Application" />
+        </div>
+        <div>
+            <hr/>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

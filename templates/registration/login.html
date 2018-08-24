@@ -1,0 +1,46 @@
+ {% extends "home/base.html" %} {% block content %} {% load staticfiles%}
+
+<div class="col-md-6 offset-md-3">
+    <span class="anchor" id="formLogin"></span>
+    <!-- form card login with validation feedback -->
+    <div class="card card-outline-secondary">
+        <div class="card-header w3-center">
+            <h3 class="mb-0">Login</h3>
+        </div>
+        <div class="card-body">
+            {% if form.errors %}
+            <p class="w3-center text-white bg-danger">Your username and password didn't match. Please try again.</p>
+            {% endif %} {% if next %} {% if user.is_authenticated %}
+            <p class="text-warning">Your account doesn't have access to this page. To proceed, please login with an account that has access.
+            </p>
+            {% else %}
+            <p class="text-warning">Please login to see this page.</p>
+            {% endif %} {% endif %}
+
+            <form class="form" role="form" autocomplete="off" id="loginForm" method="post" action="{% url 'login' %}">
+                <div class="form-group">
+                    {% csrf_token %}
+                    <label>
+                        <b>{{ form.username.label_tag }}</b>
+                    </label>
+                    <b class="w3-input w3-border">{{ form.username}}</b>
+                    <label>
+                        <b>{{ form.password.label_tag }}</b>
+                    </label>
+                    <b class="w3-input w3-border">{{form.password}}</b>
+                    <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+                    <button class="w3-button w3-green w3-section w3-padding w3-right" type="submit" value="login">Login</button>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </div>
+            </form>
+        </div>
+        <div class="card-header">
+            <span> Don't have an account yet?</span> <br>
+            <span> <a href='/accounts/signup'> Signup </a> </span>
+            <span class="w3-right w3-padding">Forgot
+                <a href="{% url 'password_reset' %}">password?</a>
+            </span>
+        </div>
+    </div>
+</div>
+{% endblock %}

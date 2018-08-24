@@ -1,0 +1,15 @@
+{% extends 'forum/layout.html' %}
+
+{% block post_content %}
+    <p class="lead">
+        post will appear here
+        <ul>
+            {% for post in posts %}
+                <li class="collection-item">
+                    <a href="/forum/details/{{post.id}}"></a>
+                    {{post.title}}
+                </li>
+            {% endfor %}
+        </ul>
+    </p>
+{% endblock %}

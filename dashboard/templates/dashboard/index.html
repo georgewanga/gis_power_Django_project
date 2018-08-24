@@ -1,0 +1,118 @@
+{% extends 'home/restricted.html' %}
+{% block logged_in %}
+{% load staticfiles%}
+
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+    <p class="lead display-4">
+        Dashboard
+    </p>
+</div>
+<div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+        <div class="container w3-red rounded shadow-lg p-2 mb-2">
+            <div class="w3-left">
+                <img class="rounded-circle" src="{% static 'home/images/linkedin_icon.png' %}" />
+            </div>
+            <div class="w3-right">
+                <h3>162</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h5>MV lines</h5>
+        </div>
+    </div>
+    <div class="w3-quarter">
+        <div class="container w3-blue rounded shadow-lg p-2 mb-2">
+            <div class="w3-left">
+                <img class="rounded-circle" src="{% static 'home/images/linkedin_icon.png' %}" />
+            </div>
+            <div class="w3-right">
+                <h3>108</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h5>Towers</h5>
+        </div>
+    </div>
+    <div class="w3-quarter">
+        <div class="container w3-teal rounded shadow-lg p-2 mb-2">
+            <div class="w3-left">
+                <img class="rounded-circle" src="{% static 'home/images/linkedin_icon.png' %}" />
+            </div>
+            <div class="w3-right">
+                <h3>524</h3>
+            </div>
+            <div class="w3-clear"></div>
+            <h5>Meter Boxes</h5>
+        </div>
+    </div>
+    <div class="w3-quarter">
+        <div class="container w3-orange rounded shadow-lg p-2 mb-2">
+            <div class="w3-left">
+                <img height="60px" class="rounded-circle" src="{% static 'home/images/transf.jpg' %}" />
+            </div>
+            <div class="w3-right">
+                <h4>71</h5>
+                    <h5>Transformers</h5>
+            </div>
+            <div class="w3-clear"></div>
+        </div>
+    </div>
+</div>
+
+<!--Welcome section-->
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class="display-6">
+                Power Analysis
+            </h1>
+        </div>
+        <hr>
+        <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12">
+            <div class="object_area">
+                <h1 class="display-1">
+                    <br> graph
+                    <br> here
+                    <br>.</h1>
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
+            <div class="card-header">
+                <h5 class="mb-0 modal-header">Key</h5>
+            </div>
+            <p>
+                {% for i in "x"|ljust:"10" %}
+                <label>
+                    <span> Item {{ forloop.counter }} </span>
+                </label>
+                <br> {% endfor %}
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row jumbotron">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fas fa-code"></i>
+            <h3>Substations</h3>
+            <p>Active: 5</p>
+            <p>Maintenance: 0</p>
+            <p>Power Fail: 0</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fas fa-bold"></i>
+            <h3>Transformers</h3>
+            <p>Active: 60</p>
+            <p>Maintenance: 0</p>
+            <p>Power Fail: 0</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fab fa-css3"></i>
+            <h3>Distribution Lines</h3>
+            <p>Active: 179</p>
+            <p>Maintenance: 0</p>
+            <p>Power Fail: 1</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
